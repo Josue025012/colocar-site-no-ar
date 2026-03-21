@@ -1,59 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meu Site</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>URBAN Streetwear</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="bg-gray-100 font-sans">
+<header>
+  <div class="logo">URBAN</div>
 
-<!-- Navbar -->
-<header class="bg-blue-600 text-white">
-  <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
-    <h1 class="text-xl font-bold">MeuWebSite</h1>
-    <nav class="space-x-4">
-      <a href="#" class="hover:underline">Início</a>
-      <a href="#" class="hover:underline">Sobre</a>
-      <a href="#" class="hover:underline">Contato</a>
-    </nav>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Masculino</a>
+    <a href="#">Feminino</a>
+    <a href="#">Drops</a>
+  </nav>
+
+  <div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
   </div>
 </header>
 
-<!-- Hero -->
-<section class="text-center py-20 bg-white">
-  <h2 class="text-4xl font-bold mb-4">Bem-vindo ao meu site</h2>
-  <p class="text-gray-600 mb-6">Um site simples feito com Tailwind</p>
-  <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-    Começar
-  </button>
+<section class="hero">
+  <h1>DROP 2026</h1>
+  <p>Streetwear de alto nível</p>
+  <button>Explorar coleção</button>
 </section>
 
-<!-- Cards -->
-<section class="max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-3 gap-6">
+<section class="products">
+  <h2>🔥 Destaques</h2>
 
-  <div class="bg-white p-6 rounded-xl shadow">
-    <h3 class="text-xl font-bold mb-2">Projeto 1</h3>
-    <p class="text-gray-600">Descrição do seu projeto.</p>
-  </div>
-
-  <div class="bg-white p-6 rounded-xl shadow">
-    <h3 class="text-xl font-bold mb-2">Projeto 2</h3>
-    <p class="text-gray-600">Descrição do seu projeto.</p>
-  </div>
-
-  <div class="bg-white p-6 rounded-xl shadow">
-    <h3 class="text-xl font-bold mb-2">Projeto 3</h3>
-    <p class="text-gray-600">Descrição do seu projeto.</p>
-  </div>
-
+  <div class="grid" id="product-list"></div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white text-center p-6">
-  <p>© 2026 MeuSite</p>
+<!-- CARRINHO -->
+<div class="cart" id="cart">
+  <h2>Seu Carrinho</h2>
+  <div id="cart-items"></div>
+  <p>Total: R$ <span id="cart-total">0</span></p>
+
+  <button onclick="checkout()">Finalizar compra</button>
+</div>
+
+<!-- CHECKOUT -->
+<div class="checkout" id="checkout">
+  <h2>Pagamento</h2>
+  <p>Escolha o método:</p>
+
+  <button onclick="pay('pix')">PIX</button>
+  <button onclick="pay('cartao')">Cartão</button>
+</div>
+
+<footer>
+  <p>© 2026 URBAN Streetwear</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
