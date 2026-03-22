@@ -1,62 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>URBAN Streetwear</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URBAN | Estilo Personalizado</title>
+    <style>
+        /* Estilização Geral */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff4500; /* Laranja vibrante para destaque */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #ff4500;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e03d00;
+        }
+
+        /* Seção de Produtos */
+        .products {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .products h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 10px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #ff4500;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Simplicidade para o exemplo */
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="logo">URBAN</div>
+    <header>
+        <div class="logo">URBAN</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Coleções</a></li>
+                <li><a href="#">Personalizar</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <nav>
-    <a href="#">Início</a>
-    <a href="#">Masculino</a>
-    <a href="#">Feminino</a>
-    <a href="#">Drops</a>
-  </nav>
+    <section class="hero">
+        <h1>Sua Identidade, Nossa Arte.</h1>
+        <p>Roupas exclusivas e personalizadas para quem dita as regras das ruas.</p>
+        <a href="#" class="btn">VER COLEÇÃO</a>
+    </section>
 
-  <div class="cart-icon" onclick="toggleCart()">
-    🛒 <span id="cart-count">0</span>
-  </div>
-</header>
+    <section class="products">
+        <h2>Destaques</h2>
+        <div class="grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=500&q=60" alt="Camiseta">
+                <h3>Camiseta Over Urban</h3>
+                <p>Personalizada com estampa artesanal.</p>
+                <p class="price">R$ 89,90</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&q=60" alt="Moletom">
+                <h3>Moletom Street Custom</h3>
+                <p>O conforto que você já conhece, com a sua cara.</p>
+                <p class="price">R$ 189,90</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=500&q=60" alt="Jeans">
+                <h3>Calça Denim Lab</h3>
+                <p>Intervenções exclusivas em cada peça.</p>
+                <p class="price">R$ 210,00</p>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
-  <h1>DROP 2026</h1>
-  <p>Streetwear de alto nível</p>
-  <button>Explorar coleção</button>
-</section>
+    <footer>
+        <p>&copy; 2026 URBAN - Todos os direitos reservados.</p>
+        <p>A próxima evolução da moda personalizada.</p>
+    </footer>
 
-<section class="products">
-  <h2>🔥 Destaques</h2>
-
-  <div class="grid" id="product-list"></div>
-</section>
-
-<!-- CARRINHO -->
-<div class="cart" id="cart">
-  <h2>Seu Carrinho</h2>
-  <div id="cart-items"></div>
-  <p>Total: R$ <span id="cart-total">0</span></p>
-
-  <button onclick="checkout()">Finalizar compra</button>
-</div>
-
-<!-- CHECKOUT -->
-<div class="checkout" id="checkout">
-  <h2>Pagamento</h2>
-  <p>Escolha o método:</p>
-
-  <button onclick="pay('pix')">PIX</button>
-  <button onclick="pay('cartao')">Cartão</button>
-</div>
-
-<footer>
-  <p>© 2026 URBAN Streetwear</p>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
